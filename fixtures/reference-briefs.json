@@ -1,0 +1,210 @@
+{
+  "note": "Handwritten reference points (not model output). Used by rule tests, the test LLM, and npm run evaluate.",
+  "briefs": {
+    "ra-wrist-thermal": [
+      {
+        "summary": "Wrist motor reached 92°C against the 80°C limit, blocking the next validation run; Alex must propose a fix by Oct 2.",
+        "type": "blocker",
+        "status": "open",
+        "topics": ["thermal", "testing"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": ["alex"],
+        "dueDate": "2026-10-02",
+        "messageIds": ["ra-wrist-thermal-m1", "ra-wrist-thermal-m2"]
+      }
+    ],
+    "ra-bearing-delay": [
+      {
+        "summary": "The wrist bearing shipment slipped from Oct 6 to Oct 20, blocking the Oct 8 assembly build; Sam must find an alternate source by Oct 3.",
+        "type": "blocker",
+        "status": "open",
+        "topics": ["parts-supply", "assembly"],
+        "relevantRoles": ["supply-chain", "mechanical"],
+        "assigneeIds": ["sam"],
+        "dueDate": "2026-10-03",
+        "messageIds": ["ra-bearing-delay-m1", "ra-bearing-delay-m2"]
+      }
+    ],
+    "ra-flange-decision": [
+      {
+        "summary": "The gripper mount now uses the ISO 9409-1-50 flange as the approved RA-04 interface.",
+        "type": "decision",
+        "status": "open",
+        "topics": ["design"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["ra-flange-decision-m2"]
+      }
+    ],
+    "ra-cable-routing": [
+      {
+        "summary": "Cable routing through joint 3 pinches at full rotation; Alex must update the routing drawing by Oct 7.",
+        "type": "action",
+        "status": "open",
+        "topics": ["design"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": ["alex"],
+        "dueDate": "2026-10-07",
+        "messageIds": ["ra-cable-routing-m1"]
+      }
+    ],
+    "ra-encoder-lead-time": [
+      {
+        "summary": "Encoder lead time grew to 10 weeks and current stock covers only 2 more builds.",
+        "type": "risk",
+        "status": "open",
+        "topics": ["parts-supply"],
+        "relevantRoles": ["supply-chain"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["ra-encoder-lead-time-m1", "ra-encoder-lead-time-m2"]
+      }
+    ],
+    "ra-housing-vent": [
+      {
+        "summary": "The vented housing prototype ran at 76°C, 16°C cooler than the sealed housing.",
+        "type": "update",
+        "status": "open",
+        "topics": ["thermal", "testing"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["ra-housing-vent-m1"]
+      }
+    ],
+    "ra-connector-fixed": [
+      {
+        "summary": "Encoder connector dropouts were fixed by firmware 2.4.1 and the issue is closed.",
+        "type": "update",
+        "status": "resolved",
+        "topics": ["testing"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["ra-connector-fixed-m1"]
+      }
+    ],
+    "ra-torque-conflict": [
+      {
+        "summary": "The wrist joint torque spec conflicts: 12 Nm in the test plan versus 15 Nm on the drawing.",
+        "type": "risk",
+        "status": "needs-confirmation",
+        "topics": ["design", "testing"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["ra-torque-conflict-m1", "ra-torque-conflict-m2"]
+      }
+    ],
+    "ra-tooling-approval": [
+      {
+        "summary": "Alex still needs to approve the wrist housing tooling drawing by Oct 2 so the vendor can cut steel.",
+        "type": "action",
+        "status": "open",
+        "topics": ["design", "assembly"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": ["alex"],
+        "dueDate": "2026-10-02",
+        "messageIds": ["ra-tooling-approval-m1"]
+      }
+    ],
+    "ra-standup": [],
+    "mb-battery-drop": [
+      {
+        "summary": "The battery pack failed the 1 m drop test with a cracked latch, blocking validation until a fix exists.",
+        "type": "blocker",
+        "status": "open",
+        "topics": ["testing", "design"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["mb-battery-drop-m1", "mb-battery-drop-m2"]
+      }
+    ],
+    "mb-cell-allocation": [
+      {
+        "summary": "The cell supplier cut the Q4 allocation by 30%; Sam must confirm the revised allocation and backup options by Oct 2.",
+        "type": "action",
+        "status": "open",
+        "topics": ["parts-supply"],
+        "relevantRoles": ["supply-chain"],
+        "assigneeIds": ["sam"],
+        "dueDate": "2026-10-02",
+        "messageIds": ["mb-cell-allocation-m1", "mb-cell-allocation-m2"]
+      }
+    ],
+    "mb-bracket-decision": [
+      {
+        "summary": "The motor mount bracket moves from steel to 6061 aluminum to save 1.2 kg.",
+        "type": "decision",
+        "status": "open",
+        "topics": ["design"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["mb-bracket-decision-m1"]
+      }
+    ],
+    "mb-fan-noise": [
+      {
+        "summary": "Fan noise in the thermal chamber came from a loose shroud, which was fixed and retested.",
+        "type": "update",
+        "status": "resolved",
+        "topics": ["thermal", "testing"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["mb-fan-noise-m1"]
+      }
+    ],
+    "mb-caster-supplier": [
+      {
+        "summary": "The second caster supplier passed qualification; Sam must place the pilot order by Oct 8.",
+        "type": "action",
+        "status": "open",
+        "topics": ["parts-supply"],
+        "relevantRoles": ["supply-chain"],
+        "assigneeIds": ["sam"],
+        "dueDate": "2026-10-08",
+        "messageIds": ["mb-caster-supplier-m1", "mb-caster-supplier-m2"]
+      }
+    ],
+    "mb-bumper-interface": [
+      {
+        "summary": "A proposal moves the bumper sensor connector 15 mm inboard; Alex must confirm bracket clearance by Oct 6.",
+        "type": "action",
+        "status": "needs-confirmation",
+        "topics": ["design"],
+        "relevantRoles": ["mechanical"],
+        "assigneeIds": ["alex"],
+        "dueDate": "2026-10-06",
+        "messageIds": ["mb-bumper-interface-m1", "mb-bumper-interface-m2"]
+      }
+    ],
+    "mb-assembly-trial": [
+      {
+        "summary": "The Oct 5 assembly trial is missing 2 calibrated torque drivers with no confirmed delivery date.",
+        "type": "risk",
+        "status": "open",
+        "topics": ["assembly", "parts-supply"],
+        "relevantRoles": ["supply-chain", "mechanical"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["mb-assembly-trial-m1", "mb-assembly-trial-m2"]
+      }
+    ],
+    "mb-packaging-old": [
+      {
+        "summary": "Packaging foam samples arrived and look fine.",
+        "type": "update",
+        "status": "open",
+        "topics": ["parts-supply"],
+        "relevantRoles": ["supply-chain"],
+        "assigneeIds": [],
+        "dueDate": null,
+        "messageIds": ["mb-packaging-old-m1"]
+      }
+    ]
+  }
+}
