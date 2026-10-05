@@ -198,6 +198,32 @@ If validation fails, the server makes one repair attempt. If that also fails, th
 
 **Derived fields:** The application, not the model, sets the point ID (`threadId:n`), the project ID, and the timestamp (the latest cited message).
 
+**Example** (thread `ra-wrist-thermal`, one of the points returned):
+
+Input messages:
+
+```
+m1  Maya: Wrist motor reached 92°C after 30 minutes at continuous load. Our approved limit is 80°C, so this blocks the next validation run.
+m2  Maya: @alex can you propose a heat-sink or duty-cycle fix by Oct 2? We need it before the chamber slot.
+m3  Alex: On it. I'll compare a larger heat sink against a 70% duty cycle.
+```
+
+Output point (after validation):
+
+```json
+{
+  "id": "ra-wrist-thermal:2",
+  "summary": "Alex Chen is assigned to propose a heat-sink or duty-cycle fix by Oct 2 to resolve the thermal issue.",
+  "type": "action",
+  "status": "open",
+  "topics": ["thermal"],
+  "relevantRoles": ["mechanical"],
+  "assigneeIds": ["alex"],
+  "dueDate": "2026-10-02",
+  "messageIds": ["ra-wrist-thermal-m2"]
+}
+```
+
 ## 8. Ranking and Labels (Rules Only)
 
 1. **Scope:**
@@ -243,6 +269,28 @@ Explanations, labels, and order all come from these rules. The LLM never changes
 If validation fails, the server makes one repair attempt. If that also fails, the digest uses the Stage 1 summaries, is stored with `aiSummarized = false`, and is labeled **Not AI-summarized**.
 
 If no points are selected, the server stores nothing and makes no call. The UI shows "Nothing needs your attention for these filters."
+
+**Example** (Alex Chen · All Projects · Validation). Ranking scores the Stage 1 point above at 7 (assigned +3, focus +2, owner +1, role +1), so it is labeled Urgency High (due within 2 days) and Relevance High, and ranked first.
+
+Input item:
+
+```json
+{
+  "ref": "P1",
+  "summary": "Alex Chen is assigned to propose a heat-sink or duty-cycle fix by Oct 2 to resolve the thermal issue.",
+  "urgency": "high",
+  "relevance": "high",
+  "status": "open",
+  "dueDate": "2026-10-02",
+  "assignees": ["Alex Chen"]
+}
+```
+
+Output line:
+
+```
+P1 | You must propose a heat-sink or duty-cycle fix by Oct 2 to resolve the thermal issue.
+```
 
 ## 10. SQLite Cache
 
